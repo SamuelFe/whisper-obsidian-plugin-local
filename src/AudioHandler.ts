@@ -38,11 +38,9 @@ export class AudioHandler {
 		}
 
 		const formData = new FormData();
-		formData.append("file", blob, fileName);
-		formData.append("model", this.plugin.settings.model);
-		formData.append("language", this.plugin.settings.language);
+		formData.append("audio_file", blob, fileName);
 		if (this.plugin.settings.prompt)
-			formData.append("prompt", this.plugin.settings.prompt);
+			formData.append("inicial_prompt", this.plugin.settings.prompt);
 
 		try {
 			// If the saveAudioFile setting is true, save the audio file
